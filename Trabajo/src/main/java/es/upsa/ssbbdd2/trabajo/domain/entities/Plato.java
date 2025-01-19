@@ -19,4 +19,9 @@ public class Plato {
     private double precio;
     private Tipo tipo;
     private List<Ingrediente> ingredientes;
+
+    public Tipo getTipo() {
+        return this.tipo;
+    }
 }
+

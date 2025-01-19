@@ -9,6 +9,7 @@ import es.upsa.ssbbdd2.trabajo.domain.entities.Tipo;
 import es.upsa.ssbbdd2.trabajo.domain.exceptions.TrabajoExceptions;
 import lombok.Builder;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 @Builder(setterPrefix = "with")
@@ -28,5 +29,10 @@ public class UseCasesImpl implements UseCases {
     @Override
     public List<Menu> buscarMenu(LocalDate fecha) {
         return List.of();
+    }
+
+    @Override
+    public Menu importMenu(File jsonFile) throws Exception {
+        return null;
     }
 }

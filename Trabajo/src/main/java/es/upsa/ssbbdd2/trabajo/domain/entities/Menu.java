@@ -13,7 +13,7 @@ import java.util.List;
 @Builder(setterPrefix = "with")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Menu  {
+public class Menu{
     private String idM;
     private String idP;
     private String nombreM;

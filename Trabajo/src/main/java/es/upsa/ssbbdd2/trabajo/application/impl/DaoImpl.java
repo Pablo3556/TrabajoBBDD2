@@ -1,21 +1,26 @@
-soluciona los fallos package es.upsa.ssbbdd2.trabajo.application.impl;
+package es.upsa.ssbbdd2.trabajo.application.impl;
 
 import es.upsa.ssbbdd2.trabajo.application.Dao;
 import es.upsa.ssbbdd2.trabajo.domain.entities.*;
 import es.upsa.ssbbdd2.trabajo.domain.exceptions.NombrePRequiredException;
 import es.upsa.ssbbdd2.trabajo.domain.exceptions.NonControlledSqlException;
 import es.upsa.ssbbdd2.trabajo.domain.exceptions.TrabajoExceptions;
+import es.upsa.ssbbdd2.trabajo.domain.exceptions.PlatoNotFoundException;
 
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class DaoImpl implements Dao {
 
     private Connection connection;
+    public DaoImpl(Connection connection) {
+        this.connection = connection;
+    }
 
 
     public DaoImpl(String url,String user,String password) throws Exception {
@@ -147,6 +152,36 @@ public class DaoImpl implements Dao {
     @Override
     public Menu insertarMenu(String nombre, double precio, LocalDate fechaDesde, LocalDate fechaHasta, List<Plato> platos) throws TrabajoExceptions {
         return null;
+    }
+
+    @Override
+    public boolean existsPlato(String platoNombre) {
+        return false;
+    }
+
+    @Override
+    public Optional<Plato> findPlatoByName(String platoNombre) {
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Plato> findPlatosByNames(List<String> nombres) {
+        return List.of();
+    }
+
+    @Override
+    public String generateMenuId() {
+        return "";
+    }
+
+    @Override
+    public String insertMenu(Menu menu) {
+        return "";
+    }
+
+    @Override
+    public void associateMenuWithPlatos(String menuId, List<Plato> platos) {
+
     }
 
 }
